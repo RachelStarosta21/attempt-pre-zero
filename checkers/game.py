@@ -43,6 +43,10 @@ class Game:
             
         return False
         
+    def evaluate(self):
+        return self.white_left - self.red_left + (self.white_kings * 0.5 - self.red_kings * 0.5)
+
+    
 
     #private function
     def _move(self, row, col):
