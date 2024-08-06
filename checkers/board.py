@@ -165,6 +165,17 @@ class Board:
 
         return moves
 
+#functions for the AI agent
 
+    def evaluate(self):
+        return self.white_left - self.red_left + (self.white_kings * 0.5 - self.red_kings * 0.5)
+
+    def get_all_pieces(self, color):
+        pieces = []
+        for row in self.board:
+            for piece in row:
+                if piece != 0 and piece.color == color:
+                    pieces.append(piece)
+        return pieces
 
         
